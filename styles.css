@@ -763,13 +763,3 @@ form button:hover {
 }
 
 
-/* 3D Canvas Styling */
-#threejs-section {
-    width: 100%;
-    height: 400px;
-}
-
-#3d-canvas {
-    width: 100%;
-    height: 100%;
-}
