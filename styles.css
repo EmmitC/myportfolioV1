@@ -140,7 +140,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     justify-content: center;
-    position: absolute;
+    position: relative;
+    margin-top: auto;
 
 
 }
@@ -171,6 +172,8 @@ footer {
     position: relative;
     width: 100%;
     bottom: 0;
+    margin-top: 20px;
+        /* Add margin above footer */
 }
 
 .icon {
