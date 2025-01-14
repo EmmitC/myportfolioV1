@@ -6,9 +6,9 @@ toggle.addEventListener('click', () => {
 
     // Change background image based on the mode
     if (document.body.classList.contains('dark-mode')) {
-        document.body.style.backgroundImage = "url('images/49c6e1672b1f53fcd21d17ebebeabab1.jpg')";
+        document.body.style.backgroundImage = "url('images/20250101_211343.jpg')";
     } else {
-        document.body.style.backgroundImage = "url('images/317cdcb9eacffc79e347dcb575ba9810.jpg')";
+        document.body.style.backgroundImage = "url('images/20250101_211343.jpg')";
     }
 });
 

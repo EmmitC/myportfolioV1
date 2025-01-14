@@ -16,6 +16,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--primary-bg);
+    background-image: url('images/20250101_211343.jpg');
     color: var(--primary-color);
     transition: background-color 0.3s ease, color 0.3s ease;
     position: relative;
@@ -32,7 +33,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("images/website-html-code-browser-view-printed-white-paper-closeup-view.jpg");
+   
     background-size: cover;
     background-position: center;
     opacity: 0.2;
@@ -140,7 +141,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     justify-content: center;
-    position: relative;
+    position: absolute;
     margin-top: auto;
 
 
@@ -280,7 +281,7 @@ img {
         /* Keep the same hero section height */
         width: 100%;
         padding: 10px;
-        background-image: url("images/49c6e1672b1f53fcd21d17ebebeabab1.jpg");
+        background-image: url("images/smallestscreen.jpg");
         background-size: cover;
         /* Ensures the background covers the entire header */
         background-position: center;
@@ -376,7 +377,7 @@ img {
         /* Keep the same hero section height */
         width: 100%;
         padding: 0.5px;
-        background-image: url("images/49c6e1672b1f53fcd21d17ebebeabab1.jpg");
+        background-image: url("images/smallestscreen.jpg");
         background-size: cover;
         /* Ensures the background covers the entire header */
         background-position: center;
@@ -466,7 +467,7 @@ img {
         /* Keep the same hero section height */
         width: 100%;
         padding: 0.5px;
-        background-image: url("images/49c6e1672b1f53fcd21d17ebebeabab1.jpg");
+        background-image: url("images/smallestscreen.jpg");
         background-size: cover;
         /* Ensures the background covers the entire header */
         background-position: center;
@@ -552,7 +553,7 @@ img {
         /* Keep the same hero section height */
         width: 100%;
         padding: 0.5px;
-        background-image: url("images/49c6e1672b1f53fcd21d17ebebeabab1.jpg");
+        background-image: url("images/smallestscreen.jpg");
         background-size: cover;
         /* Ensures the background covers the entire header */
         background-position: center;
@@ -586,7 +587,7 @@ img {
 
     header.hero {
         height: 70vh;
-        background: url('49c6e1672b1f53fcd21d17ebebeabab1') no-repeat center center/cover;
+        background: url('images/smallestscreen.jpg') no-repeat center center/cover;
         /*optional mobile specific wallpaper*/
 
     }
@@ -629,7 +630,7 @@ img {
         /* Reduce header height for small screens */
         padding: 5px;
         /* Add small padding */
-        background-image: url("images/49c6e1672b1f53fcd21d17ebebeabab1.jpg");
+        background-image: url("images/smallestscreen.jpg");
         background-size: cover;
         /* Ensure background scales properly */
         background-position: top;
