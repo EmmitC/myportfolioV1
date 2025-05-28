@@ -236,6 +236,20 @@ body{
     font-size: 1.2rem;
 }
 
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+
 .center-wrapper {
     display: flex;
     flex-wrap: wrap;
