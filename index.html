@@ -1,135 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Emmit</title>
+    <link rel="stylesheet" href="portfstyles.css">
+
+    <!-- font awesome fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
 </head>
-
-<style></style>
-
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h2>Hi</h2>
-            <h1>I'm Emmit Christopher</h1>
-            <h2>and I'm a Developer</h2>
-            <nav>
-                <ul>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-            </nav>
-            <button id="darkModeToggle">Dark/Light</button>
-        </div>
 
-        <div class="hero-image"></div>
-    </header>
+<header id="NavigationBar">
+    <nav>
+        <ul>
+        <li><a href="#introduction">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Portfolio</a></li>
+        <li><a href="#contact">Let's Talk</a></li>
+        
+    </ul>  
+    </nav>
 
-    <main>
-        <section id="about">
-            <div style="text-align: center;">
-                <h2>About Me</h2>
-                <!--<img src="images/Me.jpg">-->
+</header>
+<hr/>
+<section id="introduction">
+    <p align="center">Hello</p>
+    <h1 align="center"><strong>I'm Emmit</strong></h1>
+    <h2 align="center"><em>< A Developer /></em></h2>
+</section>
 
-                <p>I am Emmit Christopher Ebau, a tech enthusiast currently pursuing a Bachelor's Degree in AI and
-                    Machine
-                    Learning at Isbat University, Main Campus.</p>
-                <p>I code in HTML, CSS, C++, and am currently learning C and Python.</p>
-                <p>During my free time(and to feed my curiosity),I mess around with code</p>
-                <p>to hone my skills, I'm also a gamer, a songwriter and a producer</p>
-                <p></p>
+<hr/>
+
+<section id="services" align="center">
+    <h2 align="center">Services</h2>
+    <!-- i used the same project class to save time in styling -->
+     <div class="projects-grid">
+                <div class="project-item">
+                    <img src="/images/html-icon.png" alt="html-logo" class="project-image">
+                    <img src="/images/java-script.png" alt="javascript-logo" class="project-image">
+                    <img src="/images/coding-language.png" alt="php-c#-logo" class="project-image">
+                    <h3>Web-Development</h3>
+                    <p>(Html,Css,JavaScript,react)</p>
+                </div>
+
+                <div class="project-item">
+                    <img src="/images/c-program-icon.png" alt="Programming" class="project-image">
+                    <img src="/images/programmer.png" alt="Programming" class="project-image">
+                    <img src="/images/java-programming-language-icon.png" alt="Programming" class="project-image">
+                    <img src="/images/python.png" alt="Programming" class="project-image">
+                    <h3>Programming</h3>
+                    <p>(C,C++,Java)</p>
+                </div>
+
+                 <div class="project-item">
+                    <img src="/images/mysql.png" alt="database management" class="project-image">
+                    <h3>Database Management</h3>
+                    <p>(MySQl,MsSQL)</p>
+                </div>
+
+                 <!-- <div class="project-item">
+                    <img src="project4.jpg" alt="Project 4" class="project-image">
+                    <h3>Project 4</h3>
+                    <p>Project 4...</p>
+                </div> -->
+
             </div>
-        </section>
 
-        <section id="logos">
-            <div style="text-align: justify;">
-                <img src="images/html-icon.png" style="padding:20px;">
-                <img src="images/c-program-icon.png" style="padding:20px;">
-                <img src="images/programmer.png" style="padding:20px;">
-                <img src="images/python.png" style="padding:20px;">
-                <img src="images/java-script.png" style="padding:20px;">
-                <img src="images/mysql.png" style="padding:20px;">
-                <img src="images/coding-language.png" style="padding:20px;">
-            </div>
-        </section>
-
-
-        <section id="projects">
-            <h2>Projects</h2>
+</section>
+<hr/>
+<section id="projects" align="center">
+    <p align="center">My work</p>
+    <p align="center">These are projects ive worked on during my ever continuing coding journey</p>
+    
+    <h2 align="center">Projects</h2>
             <div class="projects-grid">
                 <div class="project-item">
-                    <img src="project1.jpg" alt="Project 1" class="project-image">
+                    <img src="project1.jpg" alt="Html" class="project-image">
                     <h3>Project 1</h3>
-                    <p>My first project was in Html</p>
+                    <p>My first project</p>
                 </div>
+
                 <div class="project-item">
-                    <img src="project2.jpg" alt="Project 2" class="project-image">
+                    <img src="project2.jpg" alt="project2" class="project-image">
                     <h3>Project 2</h3>
-                    <p>Description of project 2...</p>
+                    <p>Project 2...</p>
                 </div>
-            </div>
-        </section>
 
-        <section id="contact">
-            <h2>Contact Me:</h2><!--Illl be back to try fix some random ass shit here about the image sizing-->
-            <div class="logo-container">
-                <!-- Mail Icon -->
-                <a href="mailto:emmitchristopher@outlook.com" target="_blank">
-                    <i class="fas fa-envelope fa-3x"></i> <!-- Font Awesome email icon with size 3x -->
-                </a>
+                 <div class="project-item">
+                    <img src="project3.jpg" alt="Project 3" class="project-image">
+                    <h3>Project 3</h3>
+                    <p>Project 3...</p>
+                </div>
 
-                <!-- GitHub Icon -->
-                <a href="https://github.com/EmmitC" target="_blank">
-                    <i class="fab fa-github fa-3x"></i> <!-- Font Awesome GitHub icon with size 3x -->
-                </a>
+                 <div class="project-item">
+                    <img src="project4.jpg" alt="Project 4" class="project-image">
+                    <h3>Project 4</h3>
+                    <p>Project 4...</p>
+                </div>
 
-                <!-- LinkedIn Icon -->
-                <a href="https://linkedin.com/in/EmmitC" target="_blank">
-                    <i class="fab fa-linkedin fa-3x"></i> <!-- Font Awesome LinkedIn icon with size 3x -->
-                </a>
-
-                <!-- Telegram Icon -->
-                <a href="https://t.me/EmmitChristopher" target="_blank">
-                    <i class="fab fa-telegram-plane fa-3x"></i> <!-- Font Awesome Telegram icon with size 3x -->
-                </a>
             </div>
 
+</section>
+<hr/> 
+<section class="Contact-container" id="contact" >
+    <div class="contact-info">
+        <h2 >CONTACT</h2>
+        <p >Lets get to work together.<br/> Secure Your Spot on my next Project!</p>
 
-            <form action="https://formspree.io/f/yourFormId" method="POST">
-                <div>
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+        <address >
+            <a href="..">Address:Eden Road,Kampala(U)</a>
+            <a href="..">Phone: +256 765-829-806</a>
+            <a href="..">E-mail: emmitchristopher@outlook.com</a>
+        </address>
 
-                <div>
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                
-            </form>
-        <button type="submit">Send Message</button>
-        </section>
+        <div class="social-icons">
+            <img src="/images/email.png" alt="">
+            <img src="/images/github.png" alt="">
+            <img src="/images/linkedin.png" alt="">
+            <img src="/images/2168281.png" alt="">
+            <img src="/images/5969020.png" alt="">
+        </div>
+   
 
+    <div class="contact-form">
+        <h2 align="center">CONTACT FORM</h2>
+        <form action="https://formspree.io/f/yourFormId" method="POST">
+            <input type="text" placeholder="Your Name" required="required">
+            <input type="text" placeholder="Your Phone" required="required">
+            <input type="text" placeholder="Your Email" required="required">
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit" a href="mailto:emmitchristopher@outlook.com" target="_blank">Get In Touch +</button>
 
+        </form>
+    </div>
+ </div>
+</section>
+<hr/>
 
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Emmit's Portfolio</p>
+  <footer>
+        <p> &copy; 2025 Emmit's Portfolio</p>
     </footer>
-
-    <script src="main.js"></script>
-
 </body>
-
-
 </html>
