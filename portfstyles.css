@@ -21,6 +21,13 @@ html{
 scroll-behavior: smooth;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
 /* navigation bar settings */
 nav{
     background-color:var(--transparent-color);
@@ -168,41 +175,37 @@ body{
     margin-bottom: 1rem; 
 }
 
-.contact-container{
+.contact-container {
     display: flex;
-    position:relative;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 4rem var(--spacing);
+    flex-wrap: wrap;
+    justify-content: center;      /* center horizontally */
+    align-items: center;          /* center vertically */
+    min-height: 100vh;            /* stretch to viewport */
     gap: 3rem;
-    height: 100vh;
+    padding: 4rem var(--spacing);
+    box-sizing: border-box;
 }
 
-.contact-info, .contact-form{
+
+.contact-info, 
+.contact-form {
     background-color: var(--card-color);
-    padding:2rem;
+    padding: 2rem;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    flex:1;
-    
-}
-
-.contact-form{
-    width: 600px;
-    height: 500px;
-    position: absolute;
-    right:5%;
-    top: 175%;
+    flex: 1 1 45%; /* Grow/shrink basis: 45% to fit side by side */
+    max-width: 600px;
+    box-sizing: border-box;
 }
 
 .contact-info h2,
-.contact-form h2{
+.contact-form h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--accent-color);
 }
 
-.contact-info p{
+.contact-info p {
     line-height: 1.6;
     font-size: 0.95rem;
     color: #aaa;
@@ -210,7 +213,7 @@ body{
 }
 
 .contact-info address,
-.contact-info a{
+.contact-info a {
     display: block;
     color: var(--text-color);
     font-size: 0.9rem;
@@ -218,19 +221,29 @@ body{
     text-decoration: none;
 }
 
-.contact-info 
-.social-icons 
- img{
-    margin-top: 1.5rem;
+.contact-info .social-icons {
     display: flex;
     gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-info .social-icons img {
     width: 6vh;
 }
 
-.contact-infob.social-icons i{
+.contact-info .social-icons i {
     color: var(--text-color);
     font-size: 1.2rem;
 }
+
+.center-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
 
 form{
     display: flex;
