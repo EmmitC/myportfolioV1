@@ -27,6 +27,13 @@ html, body {
     padding: 0;
 }
 
+/* Reset some default spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 /* navigation bar settings */
 nav{
@@ -95,46 +102,74 @@ body{
     font-family: var(--font-primary);
     margin:0;
     padding: 0;
-    /* background-image: url(/images/wmf4pf98d4l61.png);
-    background-repeat: no-repeat; */
-    /* background-image: url(/images/20250101_211343.jpg); */
 }
 
 /* just for the introduction */
 .introduction{
     background-color: var(--bg-color);
-     /* background-image: url(/images/20250101_211343.jpg); */
      height: 100%; 
      /* sets the hight of the section fo full height of the viewport */
      width: 100%;
 }
 
+
+/* General section styling */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  padding: 2rem;
+}
+
+/* Optional dark background for sections */
+section:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+
 /* this is styling for projects */
-.projects-grid{
-    display: flex;
-    justify-items: center;
-    justify-content: center;
-    position: relative;
+
+/* Responsive grid fix */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
 }
 
 .project-item {
     background-color:var(--background-color);
     padding: 1rem;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
     /* Shadow effect for text readability */
+text-align: center;
     position: relative;
     /* display: ; */
     height: 30vh;
-    width: 30vh;
+    width: 250px;
     /* left: 1rem;
     right: 1rem; */
     justify-content: center;
     justify-items: space-between;
     cursor: pointer;
 }
+
+/* Project item styling */
+/* .project-item {
+  background: var(--background-color);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  width: 250px;
+  
+} */
 
 .project-item img{
     width: 6vh;
@@ -175,6 +210,14 @@ body{
     margin-bottom: 1rem; 
 }
 
+
+/* Social icons */
+.social-icons img {
+  width: 40px;
+  margin: 0 0.5rem;
+}
+
+
 .contact-container {
     display: flex;
     flex-wrap: wrap;
@@ -186,6 +229,10 @@ body{
     box-sizing: border-box;
 }
 
+/* Contact form */
+.contact-form {
+  margin-top: 2rem;
+}
 
 .contact-info, 
 .contact-form {
@@ -196,6 +243,25 @@ body{
     flex: 1 1 45%; /* Grow/shrink basis: 45% to fit side by side */
     max-width: 600px;
     box-sizing: border-box;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 300px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.contact-form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .contact-info h2,
@@ -250,12 +316,21 @@ body{
 }
 
 
-.center-wrapper {
+/* .center-wrapper {
     display: flex;
     flex-wrap: wrap;
     gap: 3rem;
     justify-content: center;
     align-items: center;
+} */
+
+/* Contact container fix */
+.Contact-container .center-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
