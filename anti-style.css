@@ -1,0 +1,208 @@
+
+    :root{
+        --body:#efede3;
+       
+        --primary:#00df81;
+        --primary2:#2cc295;
+        --primary3:#03624c;
+        --primary4 :#032221;
+        --primary5:#000f81;
+        
+        --bright:#40ffa7;
+        --secondary:#2fa98c;
+        --secondary2:#17876d;
+        --secondary3:#095544;
+        --secondary4:#0b453a;
+        --secondary5:#06302b;
+
+        --stone:#7D7D7D;
+        --pistachio:#aacbc4;
+
+        --glitch-green:#24d46d;
+        
+
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: "Courier New", monospace;
+      background: var(--body);
+      color: var(--primary4);
+      overflow-x: hidden;
+      
+    }
+
+    /* Header */
+    header {
+      background: var(--glitch-green);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px dashed #000;
+    }
+
+     header:hover{
+        background-color: var(--primary3);
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      transform: rotate(-6deg);
+      background: var(--primary4);
+      color: var(--glitch-green);
+      padding: 0.3rem 0.6rem;
+      border: 3px solid #000;
+      mix-blend-mode: multiply;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+   
+    nav a {
+      text-decoration: none;
+      color: #000;
+      background: cyan;
+      padding: 0.5rem 0.8rem;
+      transform: rotate(5deg);
+      border: 2px solid #000;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    nav a:hover {
+      background: #ff0;
+      transform: rotate(-10deg) scale(1.2);
+    }
+
+    /* Hero */
+    .hero {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem;
+      background:var(--pistachio);
+
+      background: repeat;
+      color: var(--glitch-green);
+    }
+    .hero h1 {
+      font-size: 5rem;
+      margin: 0;
+      background: var(--primary4);
+      display: inline-block;
+      padding: 4rem;
+      border: 4px solid #000;
+      box-shadow: 12px 12px 0 #ff0;
+      transform: rotate(-3deg);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      max-width: 600px;
+      background: #fff;
+      padding: 3rem;
+      border: 2px dashed #000;
+      transform: rotate(2deg);
+      color: var(--primary4);
+    }
+
+    /* Portfolio Grid */
+    .portfolio {
+      padding: 4rem 2rem;
+    }
+    .portfolio h2 {
+      font-size: 3rem;
+      background: #ff0;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      transform: rotate(-2deg);
+      border: 3px solid #000;
+    }
+    .grid {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project {
+      background: #111;
+      color: #fff;
+      padding: 2rem;
+      border: 4px double #ff007f;
+      transform: rotate(-2deg);
+      transition: 0.3s;
+    }
+    .project:hover {
+      transform: rotate(5deg) scale(1.1);
+      background: var(--primary4);
+      color: var(--pistachio);
+    }
+    .project h3 {
+      margin: 0 0 1rem;
+      background: #ff0;
+      color: #000;
+      display: inline-block;
+      padding: 0.3rem 0.6rem;
+      border: 2px solid #000;
+    }
+
+    /* About Section */
+    .about {
+      padding: 4rem 2rem;
+      background: var(--primary2);
+      transform: rotate(-1deg);
+      border-top: 4px solid #000;
+      border-bottom: 4px solid #000;
+    }
+    .about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #000;
+      background: #ff0;
+      padding: 0.4rem;
+      display: inline-block;
+      transform: rotate(3deg);
+      border:2px solid black ;
+    }
+    .about p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 1.6;
+    }
+
+    
+
+    /* Footer */
+    footer {
+      background:var(--pistachio);
+      padding: 2rem;
+      text-align: center;
+      border-top: 4px dashed #000;
+    }
+    footer p {
+      font-weight: bold;
+      background: var(--primary2);
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border: 2px solid #000;
+      transform: rotate(-3deg);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      nav {
+        flex-direction: column;
+      }
+    }
+  

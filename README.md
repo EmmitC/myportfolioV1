@@ -1,5 +1,6 @@
 this is a revised Version01
 
+<!--
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +26,8 @@ this is a revised Version01
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact Me</a></li>
                 </ul>
-            </nav>
+            </nav> -->
+
             <!-- <button id="darkModeToggle">Dark/Light</button> -->
         </div>
 
@@ -116,7 +118,7 @@ this is a revised Version01
                     <label for="message">Your Message</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
-                
+
             </form>
         <button type="submit">Send Message</button>
         </section>
@@ -133,287 +135,277 @@ this is a revised Version01
 
 </body>
 
-
 </html>
 
-
 :root {
-    --primary-bg: black;
-    --primary-color: white;
-    --button-bg: #ff5722;
-    --button-hover-bg: #e64a19;
-    --text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+--primary-bg: black;
+--primary-color: white;
+--button-bg: #ff5722;
+--button-hover-bg: #e64a19;
+--text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .text-shadow {
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 body {
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-bg);
-    /* background-image: url('images/20250101_211343.jpg'); */
-    color: var(--primary-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    position: relative;
+font-size: 16px;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: var(--primary-bg);
+/_ background-image: url('images/20250101_211343.jpg'); _/
+color: var(--primary-color);
+transition: background-color 0.3s ease, color 0.3s ease;
+position: relative;
 }
 
-
-
-
 body::before {
-    content: "";
-    position: absolute;
-    /* Make it position fixed relative to the viewport */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-   
+content: "";
+position: absolute;
+/_ Make it position fixed relative to the viewport _/
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+
     background-size: cover;
     background-position: center;
     opacity: 0.2;
     /* Reduced opacity for better visibility */
     z-index: -1;
     /* Ensure the content sits above the image */
+
 }
 
-/* Dark Mode Styles */
+/_ Dark Mode Styles _/
 body.dark-mode {
-    background-color: #333;
-    color: white;
-    /* Add a color definition for dark mode */
+background-color: #333;
+color: white;
+/_ Add a color definition for dark mode _/
 }
 
 body.dark-mode header {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+background-color: rgba(0, 0, 0, 0.7);
+color: white;
 }
 
 body.dark-mode nav ul li a {
-    color: orangered;
+color: orangered;
 }
 
 body.dark-mode footer {
-    background-color: #444;
+background-color: #444;
 }
 
 body.dark-mode .text-shadow {
-    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
-    /* Lighter text shadow for dark mode */
+text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+/_ Lighter text shadow for dark mode _/
 }
 
 section.visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+opacity: 1;
+transform: translateY(0);
+transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-
+font-size: 4rem;
+text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 
     /* Shadow effect for text readability */
+
 }
 
 .hero h2 {
-    font-size: 2rem;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+font-size: 2rem;
+text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 
     /* Shadow effect for text readability */
+
 }
 
 .hero p {
-    font-size: 1.5rem;
-    margin: 20px 0;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    /* Shadow effect for text readability */
+font-size: 1.5rem;
+margin: 20px 0;
+text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+/_ Shadow effect for text readability _/
 }
 
 main {
-    position: relative;
-    z-index: 1;
+position: relative;
+z-index: 1;
 }
 
-
 .cta-button {
-    background-color: #ff5722;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    /* Shadow effect for text readability */
+background-color: #ff5722;
+color: white;
+padding: 10px 20px;
+text-decoration: none;
+border-radius: 5px;
+font-size: 1.2rem;
+transition: background-color 0.3s ease;
+text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+/_ Shadow effect for text readability _/
 }
 
 .cta-button:hover {
-    background-color: #e64a19;
+background-color: #e64a19;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+list-style-type: none;
+padding: 0;
 }
 
-
 nav ul li a {
-    color: olive;
-    text-decoration: none;
+color: olive;
+text-decoration: none;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
-    color: #f39c12;
+text-decoration: underline;
+color: #f39c12;
 }
 
 button {
-    background-color: #000000;
-    color: whitesmoke;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    justify-content: center;
-    position: absolute;
-    margin-top: auto;
-
+background-color: #000000;
+color: whitesmoke;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+transition: background-color 0.3s ease;
+justify-content: center;
+position: absolute;
+margin-top: auto;
 
 }
 
 button:hover {
-    background-color: gray;
-    color: #000000;
+background-color: gray;
+color: #000000;
 }
 
 section {
-    padding: 2rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    z-index: 1;
+padding: 2rem;
+opacity: 0;
+transform: translateY(50px);
+transition: opacity 0.5s ease, transform 0.5s ease;
+z-index: 1;
 }
 
 section.visible {
-    opacity: 1;
-    transform: translateY(0);
+opacity: 1;
+transform: translateY(0);
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #222;
-    color: #fff;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    margin-top: 20px;
-        /* Add margin above footer */
+text-align: center;
+padding: 1rem;
+background-color: #222;
+color: #fff;
+position: relative;
+width: 100%;
+bottom: 0;
+margin-top: 20px;
+/_ Add margin above footer _/
 }
 
 .icon {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease;
+width: 50px;
+height: 50px;
+transition: transform 0.3s ease;
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
 }
 
 .icon:hover {
-    transform: scale(1.1);
+transform: scale(1.1);
 }
 
-
 .project-item {
-    background-color: #eee;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    /* Shadow effect for text readability */
-    position: relative;
+background-color: #eee;
+padding: 1rem;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease;
+text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+/_ Shadow effect for text readability _/
+position: relative;
 }
 
 .project-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    position: relative;
+transform: scale(1.05);
+box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+position: relative;
 }
 
-
-
 img {
-    max-width: 100%;
-    /* Ensures images don’t overflow their container */
-    height: auto;
-    /* Keeps the aspect ratio intact */
-    display: inline-flex;
+max-width: 100%;
+/_ Ensures images don’t overflow their container _/
+height: auto;
+/_ Keeps the aspect ratio intact _/
+display: inline-flex;
 
     /* Removes extra whitespace below the image */
     width: 20%;
     flex-direction: column;
 
-
 }
 
-
-/*General styles for the section */
+/_General styles for the section _/
 #logos {
-    padding: 2rem;
-    text-align: center;
-    background-color: z-index -1;
-    /*Adjust as needed*/
+padding: 2rem;
+text-align: center;
+background-color: z-index -1;
+/_Adjust as needed_/
 }
 
 #logos h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #333;
+font-size: 2rem;
+margin-bottom: 1rem;
+color: #333;
 }
 
-/*Flexbox container for logos */
+/_Flexbox container for logos _/
 .logo-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    /*Allow logos to wrap to the next line */
-    justify-content: center;
-    /* center align logos*/
-    gap: 20px;
-    /*Space between logos */
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+-ms-flex-align: center;
+/_Allow logos to wrap to the next line _/
+justify-content: center;
+/_ center align logos_/
+gap: 20px;
+/_Space between logos _/
 }
 
-/*Individual logo styling*/
+/_Individual logo styling_/
 .logos {
-    max-width: 150px;
-    /* Default logo size */
-    height: auto;
-    /*Maintain aspect ratio*/
-    transition: transform 0.3s ease;
+max-width: 150px;
+/_ Default logo size _/
+height: auto;
+/_Maintain aspect ratio_/
+transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1);
-    /*slight zoom effect on hover*/
+transform: scale(1.1);
+/_slight zoom effect on hover_/
 }
 
-/* Media queries for responsiveness */
+/_ Media queries for responsiveness _/
 
-/* Default styles for large screens (desktops)*/
+/_ Default styles for large screens (desktops)_/
 @media(max-width:1920px) {
-    body {
-        font-size: 16px;
-    }
+body {
+font-size: 16px;
+}
 
     header.hero {
         height: 100vh;
@@ -507,29 +499,30 @@ img {
         align-items: center;
         position: relative;
     }
+
 }
 
-/* medium screens :Tablets(768px to 1024px)*/
+/_ medium screens :Tablets(768px to 1024px)_/
 @media (max-width: 1024px) {
-    header.hero {
-        height: 100vh;
-        /* Keep the same hero section height */
-        width: 100%;
-        padding: 0.5px;
-        /* background-image: url("images/smallestscreen.jpg"); */
-        background-size: cover;
-        /* Ensures the background covers the entire header */
-        background-position: center;
-        /* Centers the image */
-        background-repeat: no-repeat;
-        /* Prevents the image from repeating */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: -1;
-        /* Optional: Adjust text color to stand out on the image */
-        /* Optional: Center text inside the section */
-    }
+header.hero {
+height: 100vh;
+/_ Keep the same hero section height _/
+width: 100%;
+padding: 0.5px;
+/_ background-image: url("images/smallestscreen.jpg"); _/
+background-size: cover;
+/_ Ensures the background covers the entire header _/
+background-position: center;
+/_ Centers the image _/
+background-repeat: no-repeat;
+/_ Prevents the image from repeating _/
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: -1;
+/_ Optional: Adjust text color to stand out on the image _/
+/_ Optional: Center text inside the section _/
+}
 
     .overlay h1 {
         font-size: 3rem;
@@ -596,31 +589,30 @@ img {
         align-items: center;
         position: relative;
     }
+
 }
 
-
-/* small screens :mobile phones (480px to 768px)*/
+/_ small screens :mobile phones (480px to 768px)_/
 @media (max-width: 768px) {
-    header.hero {
-        height: 100vh;
-        /* Keep the same hero section height */
-        width: 100%;
-        padding: 0.5px;
-        /* background-image: url("images/smallestscreen.jpg"); */
-        background-size: cover;
-        /* Ensures the background covers the entire header */
-        background-position: center;
-        /* Centers the image */
-        background-repeat: no-repeat;
-        /* Prevents the image from repeating */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: -1;
-        /* Optional: Adjust text color to stand out on the image */
-        /* Optional: Center text inside the section */
-    }
-
+header.hero {
+height: 100vh;
+/_ Keep the same hero section height _/
+width: 100%;
+padding: 0.5px;
+/_ background-image: url("images/smallestscreen.jpg"); _/
+background-size: cover;
+/_ Ensures the background covers the entire header _/
+background-position: center;
+/_ Centers the image _/
+background-repeat: no-repeat;
+/_ Prevents the image from repeating _/
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: -1;
+/_ Optional: Adjust text color to stand out on the image _/
+/_ Optional: Center text inside the section _/
+}
 
     #logos {
         padding: 1rem;
@@ -682,31 +674,30 @@ img {
         width: 100%;
         padding: 1rem;
     }
+
 }
 
-
-/*extra small screens :very small mobile phones (less than 480px)*/
+/_extra small screens :very small mobile phones (less than 480px)_/
 @media (max-width: 480px) {
-    header.hero {
-        height: 100vh;
-        /* Keep the same hero section height */
-        width: 100%;
-        padding: 0.5px;
-        background-image: url("images/smallestscreen.jpg");
-        background-size: cover;
-        /* Ensures the background covers the entire header */
-        background-position: center;
-        /* Centers the image */
-        background-repeat: no-repeat;
-        /* Prevents the image from repeating */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: -1;
-        /* Optional: Adjust text color to stand out on the image */
-        /* Optional: Center text inside the section */
-    }
-
+header.hero {
+height: 100vh;
+/_ Keep the same hero section height _/
+width: 100%;
+padding: 0.5px;
+background-image: url("images/smallestscreen.jpg");
+background-size: cover;
+/_ Ensures the background covers the entire header _/
+background-position: center;
+/_ Centers the image _/
+background-repeat: no-repeat;
+/_ Prevents the image from repeating _/
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: -1;
+/_ Optional: Adjust text color to stand out on the image _/
+/_ Optional: Center text inside the section _/
+}
 
     .logos {
         max-width: 80px;
@@ -753,8 +744,7 @@ img {
 
 }
 
-
-/* Extra Small Screens (less than 320px) */
+/_ Extra Small Screens (less than 320px) _/
 @media (max-width: 320px) {
 
     /* Body Text Adjustments */
@@ -862,47 +852,40 @@ img {
         transform: scale(1.05);
         /* Slightly reduce hover effect */
     }
+
 }
 
-
-
-
-
-
-
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    position: relative;
+display: flex;
+flex-direction: column;
+gap: 15px;
+position: relative;
 }
 
 form div {
-    display: flex;
-    flex-direction: column;
-    position: relative;
+display: flex;
+flex-direction: column;
+position: relative;
 }
 
 form input,
 form textarea {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    position: relative;
+padding: 10px;
+border-radius: 5px;
+border: 1px solid #ccc;
+position: relative;
 }
 
 form button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff5722;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+background-color: #ff5722;
+color: white;
+cursor: pointer;
+transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #e64a19;
+background-color: #e64a19;
 }
-
-
