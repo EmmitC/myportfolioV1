@@ -73,6 +73,7 @@
       border: 2px solid #000;
       font-weight: bold;
       transition: 0.2s;
+      animation: glitch 1.5s infinite;
     }
     nav a:hover {
       background: #ff0;
@@ -100,6 +101,7 @@
       border: 4px solid #000;
       box-shadow: 12px 12px 0 #ff0;
       transform: rotate(-3deg);
+      animation: glitch 1.5s infinite;
     }
     .hero p {
       font-size: 1.2rem;
@@ -113,6 +115,13 @@
       color: var(--primary4);
     }
 
+     @keyframes glitch {
+      0% { text-shadow: 2px 2px red; }
+      25% { text-shadow: -2px 0 blue; }
+      50% { text-shadow: 2px -2px lime; }
+      75% { text-shadow: -2px 2px magenta; }
+      100% { text-shadow: 2px 2px red; }
+    }
     /* Portfolio Grid */
     .portfolio {
       padding: 4rem 2rem;
@@ -138,6 +147,7 @@
       border: 4px double #ff007f;
       transform: rotate(-2deg);
       transition: 0.3s;
+      animation: glitch 1.5s infinite;
     }
     .project:hover {
       transform: rotate(5deg) scale(1.1);
@@ -151,6 +161,7 @@
       display: inline-block;
       padding: 0.3rem 0.6rem;
       border: 2px solid #000;
+      
     }
 
     /* About Section */
