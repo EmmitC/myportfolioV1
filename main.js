@@ -31,3 +31,19 @@
         dot.remove();
       }, 500);
     });
+
+
+    const contactForm = document.querySelector(".contact-form");
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  contactForm.style.transform = "rotate(2deg) translateX(10px)";
+  setTimeout(() => {
+    contactForm.style.transform = "rotate(-2deg) translateX(-10px)";
+  }, 150);
+  setTimeout(() => {
+    contactForm.style.transform = "rotate(0deg) translateX(0)";
+    alert("Your chaotic message has been sent!");
+  }, 400);
+});
+

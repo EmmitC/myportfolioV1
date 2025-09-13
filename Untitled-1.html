@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anti-Design Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+  <!-- Add your font files for Bison & Black Hawk locally or via @font-face -->
+  <style>
+    /* FONTS (replace src with actual font files if you have them) */
+    @font-face {
+      font-family: "Bison";
+      src: url("fonts/Bison-Bold.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "BlackHawk";
+      src: url("fonts/BlackHawk.ttf") format("truetype");
+    }
+
+    :root {
+      --punk-pink: #ff007f;
+      --punk-green: #00ff9f;
+      --punk-yellow: #ffe600;
+      --dark-bg: #0a0a0a;
+      --light-gray: #ccc;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: var(--dark-bg);
+      color: var(--light-gray);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, rgba(255,0,127,0.3), rgba(0,255,159,0.2)), url('https://picsum.photos/1600/900?blur=3') center/cover fixed;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-family: "Bison", sans-serif;
+      font-size: 5rem;
+      letter-spacing: 5px;
+      animation: fadeInDown 1.5s ease;
+    }
+
+    header h2 {
+      font-family: "BlackHawk", cursive;
+      font-size: 2rem;
+      margin-top: 10px;
+      color: var(--punk-yellow);
+      animation: fadeInUp 2s ease;
+    }
+
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--punk-pink);
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+    nav a:hover {
+      transform: rotate(-5deg) scale(1.1);
+      color: var(--punk-green);
+    }
+
+    section {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .about {
+      background: linear-gradient(90deg, rgba(255,0,127,0.2), rgba(0,255,159,0.2));
+      backdrop-filter: blur(4px);
+    }
+
+    .projects {
+      background: #111;
+    }
+
+    .projects h2 {
+      color: var(--punk-yellow);
+    }
+
+    .contact {
+      background: linear-gradient(90deg, rgba(0,255,159,0.2), rgba(255,0,127,0.2));
+      padding: 80px 20px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: 2px solid var(--punk-pink);
+      background: #000;
+      color: white;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--punk-green);
+    }
+
+    button {
+      padding: 15px;
+      background: var(--punk-pink);
+      border: none;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: var(--punk-green);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #000;
+      font-size: 0.9rem;
+      color: var(--light-gray);
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* PARALLAX */
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="parallax">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <h1>DE EMANE</h1>
+    <h2>Anti-Design Web Wizard</h2>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am a web designer breaking rules with anti-design. My work mixes brutalist vibes, punk aesthetics, and creative chaos to create unforgettable digital experiences.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <p>Check out some of my loud, chaotic, and unapologetically bold work.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 DE EMANE. Anti-Design Portfolio.
+  </footer>
+
+</body>
+</html>
