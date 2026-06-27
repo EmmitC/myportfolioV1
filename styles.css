@@ -195,11 +195,6 @@ h1 em {
 .arrow { font-size: 1rem; transition: transform 0.2s; display: inline-block; }
 .btn-ghost:hover .arrow { transform: translateX(4px); }
 
-.btn-ghost.downloading {
-  color: var(--accent);
-  pointer-events: none;
-}
-
 .hero-right {
   padding-left: 3rem;
   display: flex;
@@ -559,148 +554,180 @@ footer {
 
 
 /* ============================================================
-   RESPONSIVE LAYER — hamburger menu + breakpoints
+   RESPONSIVE LAYER — top bar (desktop) + bottom tab bar (mobile)
    Required HTML changes are documented in the comment block
    right below this line. CSS only adds new selectors; nothing
    above was touched, so existing desktop styling is untouched.
    ============================================================
 
-   <header>
-     <div class="wordmark">Your<span>Name</span></div>
+   DESKTOP SETUP (unchanged from your original, just add a class
+   to <nav> so mobile can target/hide it independently):
 
-     <!-- existing desktop nav, now also reused inside the drawer -->
+   <header>
+     <div class="wordmark">Emmit<span>.</span>Christopher</div>
      <nav class="nav-desktop">
        <a href="#work">Work</a>
        <a href="#about">About</a>
        <a href="#contact">Contact</a>
-       <div class="avail"><span class="dot"></span>Available</div>
      </nav>
-
-     <!-- NEW: hamburger button, hidden on desktop -->
-     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-       <span class="bar"></span>
-       <span class="bar"></span>
-       <span class="bar"></span>
-     </button>
+     <div class="avail">
+       <span class="dot"></span>
+       Lets talk!
+     </div>
    </header>
 
-   <!-- NEW: full-screen mobile drawer, sits as a sibling of <header> -->
-   <div class="mobile-nav" id="mobileNav">
-     <nav class="mobile-nav-links">
-       <a href="#work"><span>01</span>Work</a>
-       <a href="#about"><span>02</span>About</a>
-       <a href="#contact"><span>03</span>Contact</a>
-     </nav>
-     <div class="mobile-nav-foot">
-       <div class="avail"><span class="dot"></span>Available for work</div>
-     </div>
-   </div>
+   MOBILE SETUP — top bar shrinks to just the wordmark; nav links
+   move into a fixed bottom tab bar, app-style. Add this as a
+   sibling of <header>, anywhere in the body (fixed positioning
+   means placement in the DOM doesn't matter):
 
-   JS (drop in before </body>):
+   <nav class="bottom-nav" id="bottomNav">
+     <a href="#work" class="bottom-nav-item" data-section="work">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+         <rect x="3" y="7" width="18" height="13" rx="2"/>
+         <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+       </svg>
+       <span>Work</span>
+     </a>
+     <a href="#about" class="bottom-nav-item" data-section="about">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+         <circle cx="12" cy="8" r="3.5"/>
+         <path d="M4.5 20c1.5-4 4.5-6 7.5-6s6 2 7.5 6"/>
+       </svg>
+       <span>About</span>
+     </a>
+     <a href="#contact" class="bottom-nav-item" data-section="contact">
+       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+         <rect x="3" y="5" width="18" height="14" rx="2"/>
+         <path d="M3 7l9 6 9-6"/>
+       </svg>
+       <span>Contact</span>
+     </a>
+     <div class="bottom-nav-indicator"></div>
+   </nav>
+
+   JS (drop in before </body>) — handles the active-state pill and
+   keeps it in sync with whichever section is on screen:
 
    <script>
-     const toggle = document.querySelector('.menu-toggle');
-     const drawer = document.getElementById('mobileNav');
-     toggle.addEventListener('click', () => {
-       const isOpen = drawer.classList.toggle('open');
-       toggle.classList.toggle('active', isOpen);
-       toggle.setAttribute('aria-expanded', isOpen);
-       document.body.style.overflow = isOpen ? 'hidden' : '';
+     const items = document.querySelectorAll('.bottom-nav-item');
+     const indicator = document.querySelector('.bottom-nav-indicator');
+
+     function moveIndicator(el) {
+       if (!el || !indicator) return;
+       indicator.style.width = el.offsetWidth + 'px';
+       indicator.style.transform = `translateX(${el.offsetLeft}px)`;
+     }
+
+     function setActive(section) {
+       items.forEach(i => i.classList.toggle('active', i.dataset.section === section));
+       const active = document.querySelector(`.bottom-nav-item[data-section="${section}"]`);
+       moveIndicator(active);
+     }
+
+     items.forEach(item => item.addEventListener('click', () => setActive(item.dataset.section)));
+
+     const sections = ['work', 'about', 'contact']
+       .map(id => document.getElementById(id))
+       .filter(Boolean);
+
+     if (sections.length) {
+       const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+           if (entry.isIntersecting) setActive(entry.target.id);
+         });
+       }, { threshold: 0.4 });
+       sections.forEach(s => observer.observe(s));
+     }
+
+     window.addEventListener('resize', () => {
+       const current = document.querySelector('.bottom-nav-item.active');
+       if (current) moveIndicator(current);
      });
-     drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-       drawer.classList.remove('open');
-       toggle.classList.remove('active');
-       toggle.setAttribute('aria-expanded', false);
-       document.body.style.overflow = '';
-     }));
+
+     setActive('work');
    </script>
    ============================================================ */
 
-/* ---------- Hamburger button ---------- */
-.menu-toggle {
+/* ---------- Desktop top nav stays exactly as-is above 768px ---------- */
+
+/* ---------- Mobile bottom tab bar (hidden on desktop) ---------- */
+.bottom-nav {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 32px;
-  height: 32px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 200;
-  padding: 0;
-}
-.menu-toggle .bar {
-  display: block;
-  width: 100%;
-  height: 1.5px;
-  background: var(--ink);
-  transition: transform 0.35s cubic-bezier(0.65,0,0.35,1), opacity 0.25s ease;
-}
-.menu-toggle.active .bar:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
-}
-.menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-.menu-toggle.active .bar:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* ---------- Mobile drawer (closed by default at all sizes) ---------- */
-.mobile-nav {
-  position: fixed;
-  inset: 0;
-  background: var(--ink);
-  z-index: 150;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 6rem 2.5rem 3rem;
-  transform: translateY(-100%);
-  transition: transform 0.5s cubic-bezier(0.77,0,0.175,1);
-  visibility: hidden;
+@media (max-width: 768px) {
+  /* Top bar slims down to just the wordmark on mobile */
+  .nav-desktop,
+  header > .avail { display: none; }
+  header {
+    justify-content: center;
+    padding: 1.25rem 1.5rem;
+  }
+
+  /* Reserve room at the bottom of the page so content/footer
+     never sits underneath the fixed tab bar */
+  body { padding-bottom: 76px; }
+
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 200;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    padding: 0.6rem 0.75rem calc(0.6rem + env(safe-area-inset-bottom));
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    animation: bottomNavRise 0.5s cubic-bezier(0.22,1,0.36,1);
+  }
+  @keyframes bottomNavRise {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  .bottom-nav-indicator {
+    position: absolute;
+    top: 0.4rem;
+    left: 0;
+    height: calc(100% - 0.8rem);
+    background: var(--ink);
+    border-radius: 14px;
+    z-index: 0;
+    transition: transform 0.35s cubic-bezier(0.65,0,0.35,1), width 0.35s cubic-bezier(0.65,0,0.35,1);
+  }
+
+  .bottom-nav-item {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.55rem 0.5rem;
+    text-decoration: none;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.25s ease, transform 0.15s ease;
+  }
+  .bottom-nav-item svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.25s cubic-bezier(0.65,0,0.35,1);
+  }
+  .bottom-nav-item:active { transform: scale(0.92); }
+  .bottom-nav-item.active {
+    color: var(--paper);
+  }
+  .bottom-nav-item.active svg {
+    transform: translateY(-1px) scale(1.05);
+  }
 }
-.mobile-nav.open {
-  transform: translateY(0);
-  visibility: visible;
-}
-.mobile-nav-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.mobile-nav-links a {
-  font-family: var(--serif);
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--paper);
-  text-decoration: none;
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(245,242,235,0.15);
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  opacity: 0;
-  transform: translateX(-16px);
-  transition: opacity 0.4s ease, transform 0.4s ease, color 0.25s;
-}
-.mobile-nav.open .mobile-nav-links a {
-  opacity: 1;
-  transform: translateX(0);
-}
-.mobile-nav.open .mobile-nav-links a:nth-child(1) { transition-delay: 0.15s; }
-.mobile-nav.open .mobile-nav-links a:nth-child(2) { transition-delay: 0.25s; }
-.mobile-nav.open .mobile-nav-links a:nth-child(3) { transition-delay: 0.35s; }
-.mobile-nav-links a:hover { color: var(--accent); }
-.mobile-nav-links a span {
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  color: var(--accent);
-}
-.mobile-nav-foot {
-  border-top: 1px solid rgba(245,242,235,0.15);
-  padding-top: 1.5rem;
-}
-.mobile-nav-foot .avail { color: #5fb86a; }
 
 /* ============================================================
    BREAKPOINT 1 — Small laptops / large tablets (≤1024px)
@@ -751,13 +778,10 @@ footer {
 
 /* ============================================================
    BREAKPOINT 2 — Tablets / mobile (≤768px)
-   Hamburger takes over, work grid drops to single column.
+   Bottom tab bar takes over (see top of file), work grid drops
+   to single column.
    ============================================================ */
 @media (max-width: 768px) {
-  header { padding: 1.5rem 1.5rem 1.25rem; }
-  .nav-desktop { display: none; }
-  .menu-toggle { display: flex; }
-
   .about-left {
     flex-direction: column;
     align-items: flex-start;
@@ -846,8 +870,8 @@ footer {
   .about-headline { font-size: 1.4rem; }
   .about-body { font-size: 0.85rem; }
 
-  .mobile-nav-links a { font-size: 1.8rem; }
-  .mobile-nav { padding: 5.5rem 1.5rem 2.5rem; }
+  .bottom-nav-item span { font-size: 0.58rem; }
+  .bottom-nav-item svg { width: 18px; height: 18px; }
 
   .marquee-item { font-size: 0.85rem; padding: 0 1.5rem; }
 }
@@ -866,9 +890,10 @@ footer {
 /* Respect reduced-motion preferences across every animated
    element introduced above and in the original sheet. */
 @media (prefers-reduced-motion: reduce) {
-  .menu-toggle .bar,
-  .mobile-nav,
-  .mobile-nav-links a,
+  .bottom-nav,
+  .bottom-nav-indicator,
+  .bottom-nav-item,
+  .bottom-nav-item svg,
   .dot,
   .marquee-track,
   .reveal,
