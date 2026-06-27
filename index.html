@@ -1,80 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anti-Design Portfolio</title>
-  <link rel="stylesheet" href="anti-style.css">
-  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Emmit Christopher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <header>
-    <div class="logo">EMMIT</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<div class="cursor" id="cursor"></div>
 
-  <section class="hero"> 
-    <h1>Hi I'm Emmit</h1>
-    <p>I’m a web designer who embraces the unconventional. What better way to express creatively than to break the rules? And turn experimental chaos into digital art.</p>
-  </section>
+<header>
+  <div class="wordmark">Emmit<span>.</span>Christopher</div>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <!-- <a href="#">Lab</a> -->
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="avail">
+    <span class="dot"></span>
+    Lets talk!
+  </div>
+</header>
 
-  <section class="portfolio" id="work">
-    <h2>Portfolio</h2>
-    <div class="grid">
-      <div class="project">
-        <h3>Glitch Landing Page</h3>
-        <p>A bold homepage that intentionally breaks all UI norms.</p>
-      </div>
-      <div class="project">
-        <h3>Axios Web</h3>
-        <p>E-commerce store built with broken grids and bold contrasts.</p>
-      </div>
-      <div class="project">
-        <h3>Experimental Poetry Blog</h3>
-        <p>A content site designed like a punk zine with digital flair.</p>
-      </div>
-      <div class="project">
-        <h3>Portfolio 4</h3>
-        <p>More wild anti-design experiments that bend the web’s rules.</p>
+<section class="hero">
+  <div class="hero-left reveal">
+    <div class="kicker">AI & ML Engineer · UI Designer  Based in Kampala, Uganda</div>
+    <h1>
+      Think<br>
+      Build<br>
+      <em>Ship!</em>
+    </h1>
+    <p class="hero-sub">I engineer intelligent systems and design the interfaces people actually want to use. Turning data into decisions, models into products shipped to the world.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn-primary">View work</a>
+      <a href="cv/Emmit_Christopher_CV.docx"  class="btn-ghost" id="cvDownload" download="Emmit-Christopher-CV.pdf">Download CV <span class="arrow">→</span></a>
+    </div>
+  </div>
+
+  <div class="hero-right reveal">
+    <div class="disciplines">
+      <div class="disc-label">Disciplines</div>
+      <div class="disc-tags">
+        <span class="tag">UI Design</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Model Development</span>
+        <span class="tag">Python</span>
+        <span class="tag">Data Science</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Natural Language Processing</span>
       </div>
     </div>
-  </section>
 
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <p>I’m a designer obsessed with breaking conformity. While others follow perfect grids and muted palettes, I create bold, chaotic, and unforgettable web experiences. I thrive in experimental design — where chaos meets creativity.</p>
-  </section>
-
-  <section id="contact" class="contact">
-  <h2>Let's Talk <span>💥</span></h2>
-  <p class="contact-subtitle">I respond faster than your Wi-Fi drops.</p>
-
-  <form class="contact-form">
-    <label for="name" class="contact-label rotate">Your Name</label>
-    <input type="text" id="name" name="name" placeholder="Type it loud" required>
-
-    <label for="email" class="contact-label glitch">Email</label>
-    <input type="email" id="email" name="email" placeholder="Broken@email" required>
-
-    <label for="message" class="contact-label chaos">Message</label>
-    <textarea id="message" name="message" rows="5" placeholder="Shout here"></textarea>
-
-    <button type="submit" class="contact-btn">Send Chaos</button>
-  </form>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num">AI</div>
+        <div class="stat-label">Primary focus</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">ML</div>
+        <div class="stat-label">Core discipline</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">UI/UX</div>
+        <div class="stat-label">Design craft</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">KLA</div>
+        <div class="stat-label">Based in Uganda</div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<div class="section-header reveal">
+  <span class="section-title">Selected work</span>
+  <span class="section-count">01 — 08</span>
+</div>
 
-  <footer>
-    <p>© 2025 Emmit's Portfolio</p>
-  </footer>
+<div class="work-grid" id="work">
+  <div class="project reveal">
+    <div class="proj-top">
+      <span class="proj-num">01</span>
+      <span class="proj-year">2026</span>
+    </div>
+    <div class="proj-cat">Machine Learning · Model Development </div>
+    <div class="proj-title">Krania.ai</div>
+    <p class="proj-desc">A fraud detection system using machine learning to identify suspicious transactions in real-time.</p>
+  </div>
+  <div class="project reveal">
+    <div class="proj-top">
+      <span class="proj-num">02</span>
+      <span class="proj-year">2026</span>
+    </div>
+    <div class="proj-cat">UI Design · webdesign</div>
+    <div class="proj-title">Axios Clothing</div>
+    <p class="proj-desc">A modern e-commerce platform for a fashion brand, focusing on user experience and seamless shopping.</p>
+  </div>
+  <div class="project reveal">
+    <div class="proj-top">
+      <span class="proj-num">03</span>
+      <span class="proj-year">2026</span>
+    </div>
+    <div class="proj-cat">AI · UI design</div>
+    <div class="proj-title">VitaRoot</div>
+    <p class="proj-desc">A health and welness brand website with AI-powered personalized recommendations for users.</p>
+  </div>
+  <div class="project reveal">
+    <div class="proj-top">
+      <span class="proj-num">04</span>
+      <span class="proj-year">2026</span>
+    </div>
+    <div class="proj-cat">UI Design · Web Development</div>
+    <div class="proj-title">Procura&trade;</div>
+    <p class="proj-desc">A publishing company's website with a modern, responsive design and seamless user experience and ai powerered recommendations.</p>
+  </div>
+  <div class="project reveal">
+    <div class="proj-top">
+      <span class="proj-num">05</span>
+      <span class="proj-year">2023</span>
+    </div>
+    <div class="proj-cat">AI · Chatbot</div>
+    <div class="proj-title">Locky</div>
+    <p class="proj-desc">A mobile lottery app with AI-powered predictive analytics.</p>
+  </div>
+  <div class="project reveal">
+    <div class="proj-top">
+      <span class="proj-num">06</span>
+      <span class="proj-year">2026</span>
+    </div>
+    <div class="proj-cat">AI · Chatbot</div>
+    <div class="proj-title">Nzuri AI</div>
+    <p class="proj-desc">An offline Chatbot for low-connectivity environments. Designed to provide seamless interaction even without internet access.</p>
+  </div>
+  <div class="project reveal">
+    <div class="proj-top">
+      <span class="proj-num">07</span>
+      <span class="proj-year">2026</span>
+    </div>
+    <div class="proj-cat">Style Assistant</div>
+    <div class="proj-title">Stylar</div>
+    <p class="proj-desc">A cross-platform style assistant that helps users create and manage their personal fashion styles.</p>
+  </div>
+  <div class="project reveal">
+    <div class="proj-top">
+      <span class="proj-num">08</span>
+      <span class="proj-year">2026</span>
+    </div>
+    <div class="proj-cat">Inventory Management</div>
+    <div class="proj-title">Stacks</div>
+    <p class="proj-desc">A comprehensive inventory management system designed for small to medium-sized businesses.</p>
+  </div>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marquee">
+    <span class="marquee-item">Machine Learning</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">UI Design</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Model Development</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Deep Learning</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Data Science</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Computer Vision</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Natural Language Processing</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Interface Design</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Machine Learning</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">UI Design</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Model Development</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Deep Learning</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Data Science</span><span class="marquete-sep">✦</span>
+    <span class="marquee-item">Computer Vision</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Natural Language Processing</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Interface Design</span><span class="marquee-sep">✦</span>
+  </div>
+</div>
+
+<section class="about-strip reveal">
+  <div class="about-left">
+    <div class="about-label">About</div>
+    <img src="images\ai me.png" alt="Emmit Christopher in a calm, friendly portrait with a simple background" class="about-portrait">
+  </div>
+  <div class="about-right">
+    <p class="about-headline" id="about">
+      <strong>Intelligent systems</strong> that think.<br>
+      <em>Beautiful interfaces that feel.</em>
+    </p>
+    <p class="about-body">
+      I'm Emmit an aspiring AI and Machine Learning engineer who also happens to care deeply about design. I build models that solve real problems and wrap them in interfaces people actually enjoy using. For me, the two disciplines aren't separate: a model no one can interact with is just math.
+    </p>
+    <p class="about-body">
+      Based in Kampala, Uganda, I'm focused on applying AI to challenges that matter in African contexts  from agriculture to healthcare to local language understanding. The future of AI isn't one-size-fits-all, and I'm here to help build the version that fits us.
+    </p>
+    <div class="skills-row">
+      <div class="skill-item">
+        <div class="skill-name">Model development</div>
+        <div class="skill-desc">From architecture to deployment, end to end</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">UI Design</div>
+        <div class="skill-desc">Interfaces that make complexity feel simple</div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-name">Applied AI</div>
+        <div class="skill-desc">Real-world solutions, African context</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="contact-cta reveal">
+  <p class="contact-text">Let's build something <strong>worth remembering.</strong></p>
+  <a href="mailto:emmitchristopher@outlook.com" class="btn-contrast">Start a project →</a>
+</div>
+
+<footer>
+  <div class="foot-col">
+    <div class="foot-label">Location</div>
+    <div class="foot-value">Kampala, Uganda<br>UTC+3</div>
+  </div>
+  <div class="foot-col">
+    <div class="foot-label" id="contact">Contact</div>
+    <a href="mailto:emmitchristopher@outlook.com" class="foot-link">emmitchristopher@outlook.com</a>
+    <a href="tel:+256745602508" class="foot-link">+256 745 602 508</a>
+    <a href="tel:+256765829806" class="foot-link">+256 765 829 806</a>
+  </div>
+  <div class="foot-col">
+    <div class="foot-label">Elsewhere</div>
+    <a href="https://github.com/EmmitC" class="foot-link">GitHub</a>
+    <a href="https://www.kaggle.com/emmitchristopher" class="foot-link">Kaggle</a>
+    <a href="https://www.linkedin.com/in/emmit-christopher-95525a369/" class="foot-link">LinkedIn</a>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© <span id="year"></span> Emmit Christopher — All rights reserved</span>
+    <span class="foot-copy">Designed & built with intention</span>
+  </div>
+</footer>
+<script src="./scripts/year.js"></script>
+<script src="./scripts/download.js"></script>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+  document.querySelectorAll('a, .project, .stat, .tag, .btn-primary, .btn-ghost').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+  });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('in'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
-<script src="main.js"></script>
-
 </html>
