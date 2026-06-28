@@ -22,6 +22,7 @@ body {
   font-family: var(--sans);
   overflow-x: hidden;
   cursor: none;
+  scroll-behavior: smooth;
 }
 
 .cursor {
